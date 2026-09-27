@@ -1,6 +1,6 @@
 import React from 'react';
 import { RoleCategory } from '../types/portfolio';
-import { Layout, Globe, BarChart3, Layers } from 'lucide-react';
+import { Layout, Server, Database, BarChart3, Layers } from 'lucide-react';
 
 interface RoleFilterProps {
   activeRole: RoleCategory;
@@ -8,7 +8,8 @@ interface RoleFilterProps {
   counts: {
     all: number;
     frontend: number;
-    webdev: number;
+    backend: number;
+    database: number;
     analytics: number;
   };
 }
@@ -20,21 +21,28 @@ export const RoleFilter: React.FC<RoleFilterProps> = ({ activeRole, onSelectRole
       label: 'All Disciplines',
       icon: Layers,
       count: counts.all,
-      desc: 'Complete overview of web, frontend, and analytics engineering',
+      desc: 'Complete overview of frontend, backend, database, and analytics engineering',
     },
     {
       id: 'frontend',
-      label: 'Frontend Developer',
+      label: 'Frontend',
       icon: Layout,
       count: counts.frontend,
-      desc: 'UI/UX interfaces, responsive layouts, HTML5/CSS3/JavaScript & Vercel',
+      desc: 'UI/UX interfaces, responsive layouts, HTML5/CSS3/JavaScript & Vercel deployment',
     },
     {
-      id: 'webdev',
-      label: 'Website Developer',
-      icon: Globe,
-      count: counts.webdev,
-      desc: 'Java, Spring Boot, REST APIs, MVC architecture & MySQL databases',
+      id: 'backend',
+      label: 'Backend',
+      icon: Server,
+      count: counts.backend,
+      desc: 'Java, Spring Boot, REST APIs, MVC architecture & microservices',
+    },
+    {
+      id: 'database',
+      label: 'Database',
+      icon: Database,
+      count: counts.database,
+      desc: 'MySQL, relational schema modeling, SQL optimization & JDBC access',
     },
     {
       id: 'analytics',
@@ -56,18 +64,18 @@ export const RoleFilter: React.FC<RoleFilterProps> = ({ activeRole, onSelectRole
             <button
               key={role.id}
               onClick={() => onSelectRole(role.id)}
-              className={`flex-1 min-w-[140px] px-3.5 py-2.5 rounded-lg text-left transition-all duration-200 cursor-pointer flex items-center justify-between gap-2 ${
+              className={`flex-1 min-w-[120px] px-3 py-2 rounded-lg text-left transition-all duration-200 cursor-pointer flex items-center justify-between gap-1.5 ${
                 isActive
                   ? 'bg-cyan-500 text-slate-950 font-semibold shadow-md shadow-cyan-500/20'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
               }`}
             >
-              <div className="flex items-center gap-2 truncate">
-                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-slate-950' : 'text-cyan-400'}`} />
-                <span className="text-xs sm:text-sm truncate whitespace-nowrap">{role.label}</span>
+              <div className="flex items-center gap-1.5 truncate">
+                <Icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-slate-950' : 'text-cyan-400'}`} />
+                <span className="text-xs sm:text-xs truncate font-medium">{role.label}</span>
               </div>
               <span
-                className={`text-xs tabular-nums px-1.5 py-0.5 rounded font-mono shrink-0 ${
+                className={`text-[10px] tabular-nums px-1.5 py-0.5 rounded font-mono shrink-0 ${
                   isActive ? 'bg-slate-950/20 text-slate-950 font-bold' : 'bg-slate-800 text-slate-400'
                 }`}
               >
@@ -79,10 +87,10 @@ export const RoleFilter: React.FC<RoleFilterProps> = ({ activeRole, onSelectRole
       </div>
 
       {/* Active Role Explainer Banner */}
-      <div className="mt-3 px-4 py-2.5 bg-[#0F1726]/60 rounded-lg border border-slate-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-400">
+      <div className="mt-3 px-4 py-2 bg-[#0F1726]/60 rounded-lg border border-slate-800/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-400">
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-          <span className="text-slate-300 font-medium">Viewing role focus:</span>
+          <span className="text-slate-300 font-medium">Viewing discipline:</span>
           <span className="text-cyan-300 font-semibold">
             {roles.find((r) => r.id === activeRole)?.label}
           </span>

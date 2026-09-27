@@ -2,8 +2,8 @@ import { Project, Experience, Education, SkillGroup, Certification } from '../ty
 
 export const personalInfo = {
   name: 'Bharathan K',
-  title: 'Frontend Developer · Website Developer · Data Analyst',
-  tagline: 'Bridging responsive human-centric interfaces, robust web systems, and data-driven analytical insights.',
+  title: 'Frontend Developer · Backend & Database · Data Analyst',
+  tagline: 'Bridging responsive human-centric interfaces, robust backend services, structured databases, and analytical insights.',
   degree: 'B.Tech – Information Technology',
   college: 'P. S. R Engineering College, Sivakasi',
   phone: '8668130425',
@@ -14,39 +14,43 @@ export const personalInfo = {
   linkedin: 'https://linkedin.com/in/bharathank',
   linkedinHandle: 'linkedin.com/in/bharathank',
   location: 'Sivakasi / Bangalore, India',
-  avatarImage: '/src/assets/images/bharathan_avatar_1790519847002.jpg',
   objective:
-    'B.Tech Information Technology student seeking Frontend/Web Development and Data Analytics opportunities to build responsive, user-friendly web applications. Hands-on exposure to HTML, CSS, JavaScript, Java, Spring Boot, MySQL and real-world web development projects, with additional experience in data analytics and dashboard development.',
+    'B.Tech Information Technology student specializing in Frontend, Backend architecture, Database design, and Data Analytics. Hands-on experience building full-stack web applications with HTML, CSS, JavaScript, Java, Spring Boot, MySQL, and developing predictive business dashboards with Python, Pandas, and Power BI.',
   stats: [
     { label: 'Core Projects Built', value: '7+' },
     { label: 'Internships Completed', value: '3' },
-    { label: 'Primary Roles Mastered', value: '3' },
+    { label: 'Technical Domains', value: '4' },
     { label: 'Analytics & Dev Tools', value: '14+' },
   ],
   availableFor: [
-    'Freelance Projects & Client Development',
+    'Freelance Projects & Client Web Systems',
     'Frontend Developer Roles',
-    'Website / Full-Stack Developer Opportunities',
+    'Backend & Database Engineering Opportunities',
     'Data Analyst & BI Dashboard Positions',
-    'Project-Based & Internship Engagements',
+    'Full-Stack Web Development Engagements',
   ],
 };
 
 export const roleDescriptions = {
   all: {
     title: 'Full Spectrum Tech Portfolio',
-    description: 'A versatile profile spanning clean frontend engineering, structured web application development, and business data analytics.',
-    keywords: ['HTML/CSS/JS', 'Spring Boot & REST', 'Python & Power BI', 'MySQL', 'Responsive UI'],
+    description: 'A versatile profile spanning frontend engineering, backend services, structured databases, and data analytics.',
+    keywords: ['HTML/CSS/JS', 'Spring Boot & REST', 'MySQL & Schemas', 'Python & Power BI', 'Responsive UI'],
   },
   frontend: {
     title: 'Frontend Developer',
-    description: 'Specializing in intuitive, responsive, and performant user interfaces with HTML5, CSS3, modern JavaScript, and component-driven architecture.',
-    keywords: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'Vercel Deployment', 'UI/UX Workflows'],
+    description: 'Specializing in intuitive, responsive, and performant user interfaces with HTML5, CSS3, modern JavaScript, and Vercel cloud deployment.',
+    keywords: ['HTML5', 'CSS3', 'JavaScript', 'Responsive UI', 'Vercel Deployment', 'Modern Web UX'],
   },
-  webdev: {
-    title: 'Website & Full-Stack Developer',
-    description: 'Engineering reliable backend services, RESTful APIs, and database-connected web systems using Java, Spring Boot, MVC patterns, and MySQL.',
-    keywords: ['Java', 'Spring Boot', 'REST APIs', 'MVC Architecture', 'MySQL Workbench', 'Microservices'],
+  backend: {
+    title: 'Backend Developer',
+    description: 'Engineering reliable server-side services, RESTful APIs, MVC design patterns, and microservices architecture using Java and Spring Boot.',
+    keywords: ['Java', 'Spring Boot', 'REST APIs', 'MVC Architecture', 'Microservices', 'JDBC'],
+  },
+  database: {
+    title: 'Database Engineer',
+    description: 'Designing normalized relational schemas, transactional data access, query optimization, and ER diagramming with MySQL.',
+    keywords: ['MySQL', 'MySQL Workbench', 'Relational Schemas', 'Indexing & Joins', 'JDBC Connectivity', 'SQL Optimization'],
   },
   analytics: {
     title: 'Data Analyst',
@@ -60,7 +64,7 @@ export const projectsData: Project[] = [
     id: 'siva-hospital',
     title: 'Siva Hospital – Appointment & Token Queue System',
     subtitle: 'Full-featured healthcare queue and clinic workflow platform with real-time token management',
-    roleTags: ['frontend', 'webdev'],
+    roleTags: ['frontend', 'backend', 'database'],
     categoryLabel: 'Web Application & Real-time Queue',
     timeframe: '2025 – 2026',
     description:
@@ -88,7 +92,7 @@ export const projectsData: Project[] = [
     id: 'ecommerce-analytics',
     title: 'Vexa E-Commerce & Customer Analytics Platform',
     subtitle: 'Full-featured modern e-commerce storefront with auth, customer flows, and business analytics',
-    roleTags: ['frontend', 'webdev', 'analytics'],
+    roleTags: ['frontend', 'backend', 'database', 'analytics'],
     categoryLabel: 'E-Commerce & Analytics Platform',
     timeframe: '2026',
     description:
@@ -115,7 +119,7 @@ export const projectsData: Project[] = [
     id: 'dreamsport',
     title: 'DreamSport – Sports & Fantasy Web Application',
     subtitle: 'Interactive sports platform featuring dynamic team building, match tracking, and responsive UI',
-    roleTags: ['frontend', 'webdev'],
+    roleTags: ['frontend', 'backend'],
     categoryLabel: 'Sports Platform & Web App',
     timeframe: '2025 – 2026',
     description:
@@ -166,7 +170,7 @@ export const projectsData: Project[] = [
     id: 'airline-management',
     title: 'Airline Management System',
     subtitle: 'Desktop enterprise software for flight scheduling, passenger ticketing, and database operations',
-    roleTags: ['webdev'],
+    roleTags: ['backend', 'database'],
     categoryLabel: 'Java Enterprise Application',
     timeframe: '2024 – 2025',
     description:
@@ -223,14 +227,14 @@ export const experienceData: Experience[] = [
     company: 'Web Development Workflows (Bangalore)',
     location: 'Bangalore, India',
     duration: 'Feb 2026 – Apr 2026',
-    roleType: 'webdev',
+    roleType: 'backend',
     highlights: [
-      'Gained deep practical exposure to end-to-end web development workflows, frontend architecture, and real-world application lifecycles.',
+      'Gained deep practical exposure to end-to-end web development workflows, backend services, and real-world application lifecycles.',
       'Implemented clean semantic markup and modern CSS styling conforming to cross-browser compatibility standards.',
-      'Worked with development debugging tools, API testing routines, and modular JavaScript codebases.',
+      'Worked with development debugging tools, API testing routines, and modular JavaScript and Java codebases.',
       'Participated in application deployment and agile project tracking.',
     ],
-    skillsGained: ['Frontend Implementation', 'Web Workflows', 'Application Deployment', 'JavaScript', 'Cross-browser Testing'],
+    skillsGained: ['Frontend Implementation', 'Backend Workflows', 'Application Deployment', 'JavaScript', 'Database Testing'],
   },
 ];
 
@@ -273,7 +277,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Backend & Web Architecture',
-    roleAssociation: 'webdev',
+    roleAssociation: 'backend',
     description: 'Designing robust server services, REST endpoints, and architectural patterns.',
     skills: [
       { name: 'Java', level: 'Proficient', experienceContext: 'Core Java, OOP principles, collections, exception handling' },
@@ -281,7 +285,18 @@ export const skillGroups: SkillGroup[] = [
       { name: 'REST APIs & MVC', level: 'Proficient', experienceContext: 'Model-View-Controller design, endpoint structuring' },
       { name: 'Microservices Concept', level: 'Working Knowledge', experienceContext: 'Decoupled service interaction and routing' },
       { name: 'Python', level: 'Proficient', experienceContext: 'Scripting, algorithmic logic, backend routines' },
-      { name: 'C / C++ (basic)', level: 'Foundational', experienceContext: 'Memory concepts, procedural programming fundamentals' },
+      { name: 'JDBC', level: 'Proficient', experienceContext: 'Java database connectivity, statement handling, result sets' },
+    ],
+  },
+  {
+    category: 'Databases & Data Management',
+    roleAssociation: 'database',
+    description: 'Structuring reliable schemas and executing relational queries.',
+    skills: [
+      { name: 'MySQL', level: 'Proficient', experienceContext: 'Relational schema design, indexes, transactional queries' },
+      { name: 'MySQL Workbench', level: 'Proficient', experienceContext: 'EER diagrams, schema modeling, query optimization' },
+      { name: 'SQL Querying', level: 'Advanced', experienceContext: 'Complex SELECTs, joins, aggregations, database views' },
+      { name: 'Database Normalization', level: 'Proficient', experienceContext: '1NF to 3NF schema structuring, foreign keys' },
     ],
   },
   {
@@ -291,20 +306,9 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { name: 'Power BI', level: 'Advanced', experienceContext: 'Interactive report generation, DAX measures, KPI cards' },
       { name: 'Python (Pandas & NumPy)', level: 'Advanced', experienceContext: 'Data wrangling, cleansing, aggregation, transformation' },
-      { name: 'SQL', level: 'Proficient', experienceContext: 'Complex SELECTs, joins, aggregations, database views' },
       { name: 'Microsoft Excel', level: 'Advanced', experienceContext: 'Pivot tables, VLOOKUP/XLOOKUP, formulas, data hygiene' },
       { name: 'Matplotlib', level: 'Proficient', experienceContext: 'Exploratory data visualization, trend graphs, histograms' },
       { name: 'Tableau', level: 'Proficient', experienceContext: 'Visual data exploration and executive storyboards' },
-    ],
-  },
-  {
-    category: 'Databases & Data Management',
-    roleAssociation: 'core',
-    description: 'Structuring reliable schemas and executing relational queries.',
-    skills: [
-      { name: 'MySQL', level: 'Proficient', experienceContext: 'Relational schema design, indexes, transactional queries' },
-      { name: 'MySQL Workbench', level: 'Proficient', experienceContext: 'EER diagrams, schema modeling, query optimization' },
-      { name: 'JDBC', level: 'Proficient', experienceContext: 'Java database connectivity, statement handling, result sets' },
     ],
   },
   {
@@ -315,7 +319,6 @@ export const skillGroups: SkillGroup[] = [
       { name: 'GitHub & Git', level: 'Proficient', experienceContext: 'Version control, branch management, collaborative workflows' },
       { name: 'VS Code', level: 'Advanced', experienceContext: 'Primary web & script editing suite, extensions' },
       { name: 'Eclipse IDE', level: 'Proficient', experienceContext: 'Java enterprise development, project builds' },
-      { name: 'Android Studio', level: 'Working Knowledge', experienceContext: 'XML UI drafting, Android SDK emulation' },
       { name: 'AI Coding Tools', level: 'Advanced', experienceContext: 'Prompt engineering, accelerated prototyping, code auditing' },
     ],
   },

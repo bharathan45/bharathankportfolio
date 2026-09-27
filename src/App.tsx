@@ -24,7 +24,8 @@ export default function App() {
   const counts = {
     all: projectsData.length,
     frontend: projectsData.filter((p) => p.roleTags.includes('frontend')).length,
-    webdev: projectsData.filter((p) => p.roleTags.includes('webdev')).length,
+    backend: projectsData.filter((p) => p.roleTags.includes('backend')).length,
+    database: projectsData.filter((p) => p.roleTags.includes('database')).length,
     analytics: projectsData.filter((p) => p.roleTags.includes('analytics')).length,
   };
 
@@ -59,20 +60,20 @@ export default function App() {
           onSelectRole={(role) => setActiveRole(role)}
         />
 
-        {/* Interactive Live Demonstrations Spotlight Showcase */}
-        <section className="py-14 md:py-18 border-b border-slate-800/80 bg-[#0A0E17]/60">
+        {/* Live Interactive Demos Section */}
+        <section id="simulators" className="py-14 md:py-18 border-b border-slate-800/80 bg-[#0B0F17]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <div className="flex items-center gap-1.5 text-xs font-mono text-cyan-400 mb-1">
-                  <Play className="w-3 h-3 fill-current" />
-                  <span>INTERACTIVE PROTOTYPES</span>
+                <div className="flex items-center gap-2 text-cyan-400 text-xs font-mono mb-1">
+                  <Play className="w-3.5 h-3.5" />
+                  <span>Interactive Application Simulators</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                  Live Project Demos
+                  Live Interactive Simulations
                 </h2>
-                <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                  Test functional prototypes of hospital queue system, analytics dashboard, and cafe ordering.
+                <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
+                  Test functional prototypes of hospital queue system, analytics platform, and cafe ordering.
                 </p>
               </div>
 
@@ -116,8 +117,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* Active Demo Container */}
-            <div className="transition-all duration-300">
+            {/* Display Active Simulator */}
+            <div>
               {activeDemoTab === 'hospital' && <HospitalQueueSimulator />}
               {activeDemoTab === 'analytics' && <AnalyticsDashboardWidget />}
               {activeDemoTab === 'qr_food' && <QrFoodOrderingSimulator />}
@@ -125,24 +126,26 @@ export default function App() {
           </div>
         </section>
 
-        {/* Technical Skills Section */}
+        {/* Skills Section */}
         <SkillsSection activeRole={activeRole} />
 
-        {/* Experience & Education Timeline */}
+        {/* Experience Section */}
         <ExperienceSection activeRole={activeRole} />
 
-        {/* Certifications & Additional Info */}
+        {/* Certifications Section */}
         <CertificationsSection />
 
-        {/* Contact & Hire Section */}
+        {/* Contact Section */}
         <ContactSection />
       </main>
 
-      {/* Footer */}
+      {/* Clean Footer */}
       <Footer onOpenResume={() => setIsResumeOpen(true)} />
 
-      {/* Printable 2-Page Official Resume Modal */}
-      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
+      {/* Printable Dual-Page Resume Modal */}
+      {isResumeOpen && (
+        <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
+      )}
     </div>
   );
 }

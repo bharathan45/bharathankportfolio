@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
               <span>{personalInfo.name}</span>
             </div>
             <p className="text-[11px] text-slate-400">
-              Frontend Developer · Website Developer · Data Analyst
+              Frontend · Backend · Database · Data Analyst
             </p>
           </div>
 

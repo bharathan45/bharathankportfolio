@@ -1,10 +1,10 @@
-export type RoleCategory = 'all' | 'frontend' | 'webdev' | 'analytics';
+export type RoleCategory = 'all' | 'frontend' | 'backend' | 'database' | 'analytics';
 
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
-  roleTags: ('frontend' | 'webdev' | 'analytics')[];
+  roleTags: ('frontend' | 'backend' | 'database' | 'analytics')[];
   categoryLabel: string;
   timeframe: string;
   description: string;
@@ -23,7 +23,7 @@ export interface Experience {
   company: string;
   location?: string;
   duration: string;
-  roleType: 'frontend' | 'webdev' | 'analytics';
+  roleType: 'frontend' | 'backend' | 'database' | 'analytics';
   highlights: string[];
   skillsGained: string[];
 }
@@ -39,11 +39,11 @@ export interface Education {
 
 export interface SkillGroup {
   category: string;
-  roleAssociation: 'frontend' | 'webdev' | 'analytics' | 'core';
+  roleAssociation: 'frontend' | 'backend' | 'database' | 'analytics' | 'core';
   description: string;
   skills: {
     name: string;
-    level: string; // e.g. "Proficient", "Advanced", "Working Knowledge"
+    level: string;
     experienceContext: string;
   }[];
 }
@@ -53,5 +53,5 @@ export interface Certification {
   issuer: string;
   status: string;
   highlight: string;
-  category: 'analytics' | 'core' | 'frontend' | 'webdev';
+  category: 'analytics' | 'core' | 'frontend' | 'backend' | 'database';
 }

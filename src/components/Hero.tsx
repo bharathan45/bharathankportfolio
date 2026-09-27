@@ -8,11 +8,10 @@ import {
   ArrowRight,
   Check,
   Copy,
-  ExternalLink,
   Code2,
+  Server,
   Database,
   BarChart2,
-  MapPin,
   GraduationCap,
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
@@ -60,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, activeRole, onSelectRo
               {personalInfo.name}
             </h1>
             <p className="text-lg sm:text-xl font-medium text-cyan-400">
-              Frontend Developer · Website Developer · Data Analyst
+              Frontend · Backend · Database · Data Analyst
             </p>
           </div>
 
@@ -75,12 +74,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, activeRole, onSelectRo
           </div>
 
           {/* Career Objective Text */}
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+          <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
             {personalInfo.objective}
           </p>
 
-          {/* 3 Roles Quick Selection */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 max-w-3xl">
+          {/* Quick 4 Disciplines Selector Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
             <button
               onClick={() => onSelectRole('frontend')}
               className={`p-3.5 rounded-lg border text-left transition-colors cursor-pointer ${
@@ -92,18 +91,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, activeRole, onSelectRo
               <div className="flex items-center gap-2 text-cyan-400 mb-1">
                 <Code2 className="w-4 h-4" />
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-                  Frontend Developer
+                  Frontend
                 </span>
               </div>
               <p className="text-xs text-slate-400 leading-snug">
-                HTML5, CSS3, JavaScript, Responsive UI & Vercel
+                HTML5, CSS3, JS & Vercel
               </p>
             </button>
 
             <button
-              onClick={() => onSelectRole('webdev')}
+              onClick={() => onSelectRole('backend')}
               className={`p-3.5 rounded-lg border text-left transition-colors cursor-pointer ${
-                activeRole === 'webdev'
+                activeRole === 'backend'
+                  ? 'bg-cyan-950/40 border-cyan-400'
+                  : 'bg-[#101726] border-slate-800 hover:border-slate-700'
+              }`}
+            >
+              <div className="flex items-center gap-2 text-cyan-400 mb-1">
+                <Server className="w-4 h-4" />
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                  Backend
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 leading-snug">
+                Java, Spring Boot & REST APIs
+              </p>
+            </button>
+
+            <button
+              onClick={() => onSelectRole('database')}
+              className={`p-3.5 rounded-lg border text-left transition-colors cursor-pointer ${
+                activeRole === 'database'
                   ? 'bg-cyan-950/40 border-cyan-400'
                   : 'bg-[#101726] border-slate-800 hover:border-slate-700'
               }`}
@@ -111,11 +129,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, activeRole, onSelectRo
               <div className="flex items-center gap-2 text-cyan-400 mb-1">
                 <Database className="w-4 h-4" />
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-200">
-                  Website Developer
+                  Database
                 </span>
               </div>
               <p className="text-xs text-slate-400 leading-snug">
-                Java, Spring Boot, REST APIs, MVC & MySQL
+                MySQL, Schema & SQL Joins
               </p>
             </button>
 
@@ -134,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, activeRole, onSelectRo
                 </span>
               </div>
               <p className="text-xs text-slate-400 leading-snug">
-                Power BI, Python (Pandas), SQL & Excel Dashboards
+                Power BI, Pandas, Excel & EDA
               </p>
             </button>
           </div>
@@ -165,60 +183,60 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, activeRole, onSelectRo
             </a>
           </div>
 
-          {/* Direct Contact Row */}
-          <div className="pt-3 border-t border-slate-800/80 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 font-mono">
-            {/* Copy Email */}
-            <button
-              onClick={handleCopyEmail}
-              className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors cursor-pointer"
-              title="Click to copy email"
-            >
-              <Mail className="w-3.5 h-3.5 text-slate-500" />
-              <span>{personalInfo.email}</span>
-              {copiedEmail ? (
-                <Check className="w-3 h-3 text-emerald-400 ml-1" />
-              ) : (
-                <Copy className="w-3 h-3 opacity-60 ml-1" />
-              )}
-            </button>
+          {/* Contact and Links */}
+          <div className="pt-4 border-t border-slate-800/70 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
+            <div className="flex flex-wrap items-center gap-4">
+              <button
+                onClick={handleCopyEmail}
+                className="flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                title="Click to copy email"
+              >
+                <Mail className="w-4 h-4 text-cyan-400" />
+                <span>{personalInfo.email}</span>
+                {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3 h-3 text-slate-500" />}
+              </button>
 
-            {/* Copy Phone */}
-            <button
-              onClick={handleCopyPhone}
-              className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors cursor-pointer"
-              title="Click to copy phone number"
-            >
-              <Phone className="w-3.5 h-3.5 text-slate-500" />
-              <span>{personalInfo.phoneDisplay}</span>
-              {copiedPhone ? (
-                <Check className="w-3 h-3 text-emerald-400 ml-1" />
-              ) : (
-                <Copy className="w-3 h-3 opacity-60 ml-1" />
-              )}
-            </button>
+              <button
+                onClick={handleCopyPhone}
+                className="flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                title="Click to copy phone"
+              >
+                <Phone className="w-4 h-4 text-cyan-400" />
+                <span>{personalInfo.phoneDisplay}</span>
+                {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3 h-3 text-slate-500" />}
+              </button>
+            </div>
 
-            {/* Socials */}
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 hover:text-white transition-colors"
-            >
-              <Github className="w-3.5 h-3.5" />
-              <span>GitHub</span>
-              <ExternalLink className="w-2.5 h-2.5 opacity-60" />
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                <span>GitHub</span>
+              </a>
 
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1 hover:text-white transition-colors"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
-              <span>LinkedIn</span>
-              <ExternalLink className="w-2.5 h-2.5 opacity-60" />
-            </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                href={`https://wa.me/91${personalInfo.phone}`}
+                target="_blank"
+                rel="noreferrer"
+                className="px-2.5 py-1 rounded bg-emerald-950/80 text-emerald-400 hover:bg-emerald-900 border border-emerald-800/80 text-xs font-medium"
+              >
+                WhatsApp Chat
+              </a>
+            </div>
           </div>
         </div>
       </div>

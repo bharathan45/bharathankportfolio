@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Project, RoleCategory } from '../types/portfolio';
 import { projectsData } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
-import { ExternalLink, Github, ArrowRight, Play, Code2, Globe, BarChart3 } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Code2, Server, Database, BarChart3 } from 'lucide-react';
 
 interface ProjectsSectionProps {
   activeRole: RoleCategory;
@@ -20,7 +20,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ activeRole }) 
 
   const getRoleIcon = (tags: string[]) => {
     if (tags.includes('analytics')) return BarChart3;
-    if (tags.includes('webdev')) return Globe;
+    if (tags.includes('database')) return Database;
+    if (tags.includes('backend')) return Server;
     return Code2;
   };
 
@@ -34,7 +35,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ activeRole }) 
               Projects & Work
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Web applications, hospital queue systems, and analytics dashboards built from resume.
+              Frontend web applications, backend systems, database models, and analytics platforms.
             </p>
           </div>
 
@@ -63,10 +64,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ activeRole }) 
                       <span className="font-mono text-slate-400">{project.timeframe}</span>
                     </div>
 
-                    {project.interactiveType && (
-                      <span className="flex items-center gap-1 text-[11px] text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 px-2 py-0.5 rounded font-medium">
-                        <Play className="w-2.5 h-2.5 fill-current" />
-                        <span>Try Demo</span>
+                    {project.liveUrl && (
+                      <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/70 border border-emerald-800/80 px-2 py-0.5 rounded">
+                        Live Deployed
                       </span>
                     )}
                   </div>

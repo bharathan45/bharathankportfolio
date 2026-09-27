@@ -20,7 +20,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   const handleCopyText = () => {
     const resumeText = `
 BHARATHAN K
-Frontend Developer · B.Tech Information Technology
+Frontend Developer · Backend & Database · Data Analyst
 Phone: ${personalInfo.phone} | Email: ${personalInfo.email}
 GitHub: ${personalInfo.githubHandle} | LinkedIn: ${personalInfo.linkedinHandle}
 
@@ -170,7 +170,7 @@ ADDITIONAL INFORMATION
                     BHARATHAN K
                   </h2>
                   <div className="text-sm font-semibold text-slate-700">
-                    Frontend Developer | B.Tech Information Technology
+                    Frontend Developer · Backend & Database · Data Analyst
                   </div>
                   <div className="text-xs text-slate-600 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 pt-1 font-mono">
                     <span>Phone: {personalInfo.phone}</span>

@@ -177,9 +177,10 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setRoleType(e.target.value)}
                     className="w-full bg-[#090E17] border border-slate-700 text-xs text-white rounded-lg px-3 py-2 focus:outline-none focus:border-cyan-400"
                   >
-                    <option value="Freelance Web Project">Freelance Web / Dashboard Project</option>
+                    <option value="Freelance Web Project">Freelance Web / Client Project</option>
                     <option value="Frontend Developer">Frontend Developer Role</option>
-                    <option value="Website Developer">Website Developer Role</option>
+                    <option value="Backend Developer">Backend Developer Role</option>
+                    <option value="Database Engineer">Database Engineer Role</option>
                     <option value="Data Analyst">Data Analyst Role</option>
                   </select>
                 </div>
